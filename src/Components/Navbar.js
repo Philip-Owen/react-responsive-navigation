@@ -30,6 +30,7 @@ const Nav = styled.div`
 
 		#menu-toggle {
 			padding: 4px;
+			cursor: pointer;
 			border-radius: 4px;
 			border: 1px solid black;
 			display: inline;
@@ -53,11 +54,11 @@ const NavLinkList = styled.ul`
 	@media (max-width: 768px) {
 		padding-inline-start: 0;
 		flex-direction: column;
-    display: ${props => (props.toggled ? 'inline' : 'none')};
-    
-    li{
-      padding-top: 5px;
-    }
+		display: ${props => (props.toggled ? 'inline' : 'none')};
+
+		li {
+			padding-top: 5px;
+		}
 	}
 `;
 
@@ -70,7 +71,6 @@ const StyledLink = styled(Link)`
 		color: gray;
 		text-decoration: underline;
 	}
-
 `;
 
 class Navbar extends Component {
@@ -99,8 +99,8 @@ class Navbar extends Component {
 			<Nav>
 				<div>
 					<span id="logo">Navbar</span>
-					<div id="menu-toggle">
-						<span onClick={this.menuToggle}>Menu</span>
+					<div id="menu-toggle" onClick={this.menuToggle}>
+						<span>Menu</span>
 					</div>
 				</div>
 				<NavLinkList toggled={toggled}>
